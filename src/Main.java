@@ -67,7 +67,6 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Integer> lista = new ArrayList<>(Arrays.asList(5, 3, 15, 7, 1, 12, 4));
         ArrayList<Integer> sortedList = new ArrayList<>(Main.quickSort(lista));
-        System.out.println(sortedList);
 
     }
 }
