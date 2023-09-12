@@ -64,9 +64,24 @@ public class Main {
         return sortedList;
     }
 
+    public static List<Integer> insertionSort(List<Integer> lista) {
+        for (int i = 1; i < lista.size(); i = i + 1) {
+            int j = i;
+            while (j > 0 && lista.get(j) < lista.get(j - 1)) {
+                int temp = lista.get(j);
+                lista.set(j, lista.get(j - 1));
+                lista.set(j - 1, temp);
+                j = j - 1;
+            }
+        }
+        return lista;
+    }
+
+
     public static void main(String[] args) {
         ArrayList<Integer> lista = new ArrayList<>(Arrays.asList(5, 3, 15, 7, 1, 12, 4));
-        ArrayList<Integer> sortedList = new ArrayList<>(Main.quickSort(lista));
+        ArrayList<Integer> sortedList = new ArrayList<>(Main.insertionSort(lista));
+        System.out.println(sortedList);
 
     }
 }
