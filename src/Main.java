@@ -77,10 +77,23 @@ public class Main {
         return lista;
     }
 
-
+    public static List<Integer> selectionSort(List<Integer> lista) {
+        for (int i = 0; i < lista.size(); i = i + 1) {
+            int minIndex = i;
+            for (int j = i; j < lista.size(); j = j + 1) {
+                if (lista.get(j) < lista.get(minIndex)) {
+                    minIndex = j;
+                }
+            }
+            int temp = lista.get(i);
+            lista.set(i, lista.get(minIndex));
+            lista.set(minIndex, temp);
+        }
+        return lista;
+    }
     public static void main(String[] args) {
         ArrayList<Integer> lista = new ArrayList<>(Arrays.asList(5, 3, 15, 7, 1, 12, 4));
-        ArrayList<Integer> sortedList = new ArrayList<>(Main.insertionSort(lista));
+        ArrayList<Integer> sortedList = new ArrayList<>(Main.selectionSort(lista));
         System.out.println(sortedList);
 
     }
